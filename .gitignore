@@ -1,0 +1,6 @@
+node_modules 
+# Text backup files
+*.bak
+
+#Database
+asigped.db
