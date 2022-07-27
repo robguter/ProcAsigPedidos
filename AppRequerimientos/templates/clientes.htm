@@ -1,0 +1,66 @@
+{% extends 'layout.htm' %}
+{% block content %}
+    <h1>Clientes</h1> 
+        <section class="page-section clearfix">
+            <div class="container row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="row intro col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="cedrif">Cedula o Rif</label>
+                                    <input type="password" class="form-control" id="cedrif" placeholder="Cedula o Rif">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="nombre">Nombre</label>
+                                    <input type="text" class="form-control" id="nombre">
+                                </div>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label for="direccion">Dirección</label>
+                                <input type="text" class="form-control" id="direccion">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label for="telefono">Teléfono</label>
+                                    <input type="text" class="form-control" id="telefono">
+                                </div>
+                                <div class="form-group col-md-8">
+                                    <label for="correo">Email</label>
+                                    <input type="email" class="form-control" id="correo" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="form-group col-md-12 text-center">
+                                <button type="submit" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 btn btn-primary">Enviar</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rounded">
+                        <table class="table table-striped">
+                            <thead>
+                              <tr>
+                                <th scope="col">Cedula o Rif</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Dirección</th>
+                                <th scope="col">Teléfono</th>
+                                <th scope="col">Correo</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                            {% for oClie in oClies %}
+                                <tr>
+                                    <td>{{oClie.cedrif}}</td>
+                                    <td>{{oClie.nombre}}</td>
+                                    <td>{{oClie.direccion}}</td>
+                                    <td>{{oClie.telefono}}</td>
+                                    <td>{{oClie.correo}}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+{% endblock %}

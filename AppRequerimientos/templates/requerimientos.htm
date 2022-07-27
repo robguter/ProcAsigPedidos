@@ -1,0 +1,79 @@
+{% extends 'layout.htm' %}
+{% block content %}
+    <h1>Requerimientos</h1> 
+    <section class="page-section clearfix">
+        <div class="container row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="row intro col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="nombre">Requerimiento</label>
+                                <input type="password" class="form-control" id="nombre" placeholder="Requerimiento">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="tipo">Tipo</label>
+                                <select id="tipo" class="form-control">
+                                    <option selected>Seleccione...</option>
+                                    <option value="1">FOTO</option>
+                                    <option value="2">VIDEO</option>
+                                    <option value="3">PLANO</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="tipo">Cliente</label>
+                                <select id="tipo" class="form-control">
+                                    <option selected>Seleccione...</option>
+                                    {% for oClie in oClies %}
+                                        <tr>
+                                            <option value="{{oClie.cedrif}}">{{oClie.nombre}}</option>
+                                        </tr>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="tipo">Proveedor</label>
+                                <select id="tipo" class="form-control">
+                                    <option selected>Seleccione...</option>
+                                    {% for oProv in oProvs %}
+                                        <tr>
+                                            <option value="{{oProv.cedrif}}">{{oProv.nombre}}</option>
+                                        </tr>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-12 text-center">
+                            <button type="submit" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 btn btn-primary">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rounded">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Tipo</th>
+                            <th scope="col">Cliente</th>
+                            <th scope="col">Proveedor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for oRequ in oRequs %}
+                            <tr>
+                                <td>{{oRequ.nombre}}</td>
+                                <td>{{oRequ.tipo}}</td>
+                                <td>{{oRequ.idcte}}</td>
+                                <td>{{oRequ.idprov}}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </section>
+{% endblock %}

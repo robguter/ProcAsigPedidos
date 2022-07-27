@@ -1,0 +1,20 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-light">
+  <a class="navbar-brand" href="/admin/">Sisterag</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="mainNav">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'Clientes' %}">Clientes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'Proveedores' %}">Proveedores</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'Requerimientos' %}">Requerimientos</a>
+      </li>
+    </ul>
+  </div>
+</nav>

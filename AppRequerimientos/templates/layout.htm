@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Portfolio</title>
+    <link rel="shortcut icon" href="#">
+    <link rel='stylesheet' href="{% static 'css/bootstrap.min.css' %}" />
+    <link rel='stylesheet' href="{% static 'css/bootstrap.css' %}" />
+    <link rel='stylesheet' href="{% static 'css/style.css' %}" />
+    <link rel="shortcut icon" href="{% static 'media/SRG01.jpg' %}">
+</head>
+<body>
+    {% include 'common/head.htm' %}
+    <div class="container p-4 col-10">
+        {% block content %}
+        {% endblock %}
+    </div>
+    {% include 'common/foot.htm' %}
+    <script src="{% static 'jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'jquery/jquery.js' %}"></script>
+    <script src="{% static 'jquery/jquery.slim.min.js' %}"></script>
+    <script src="{% static 'jquery/jquery.slim.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+</body>
+</html>
